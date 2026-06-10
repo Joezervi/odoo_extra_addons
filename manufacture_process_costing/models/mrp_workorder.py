@@ -3,7 +3,7 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
 #    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
@@ -19,60 +19,49 @@
 #    If not, see <http://www.gnu.org/licenses/>.
 #
 #############################################################################
-import logging
-
 from odoo import models
-
-from ..datamodels.datamodel import CostMethod
-
-_logger = logging.getLogger(__name__)
 
 
 class MrpWorkorder(models.Model):
     """This class inherits the existing class with model name mrp.workorder
     to define a function to automatically calculate the costings"""
-
-    _inherit = "mrp.workorder"
+    _inherit = 'mrp.workorder'
 
     def button_finish(self):
         """Super the button_finish button in workorder and update the
         actual_minute and actual_quantity of labour_cost_ids,
         overhead_cost_ids, material_cost_ids according to the settings value"""
-        res = super().button_finish()
-        process = self.env["ir.config_parameter"].sudo()
+        res = super(MrpWorkorder, self).button_finish()
+        process = self.env['ir.config_parameter'].sudo()
         process_value = process.get_param(
-            "manufacture_process_costing.process_costing_method"
-        )
-        if process_value == CostMethod.WORK_CENTER.code:
-            for workorder in self:
-                for labour in workorder.production_id.labour_cost_ids.filtered(
-                    lambda l: l.work_center_id == workorder.workcenter_id
-                ):
-                    workorder.production_id.write(
-                        {
-                            "labour_cost_ids": [
-                                (1, labour.id, {"actual_minute": workorder.duration})
-                            ]
-                        }
-                    )
-                for overhead in workorder.production_id.overhead_cost_ids.filtered(
-                    lambda l: l.work_center_id == workorder.workcenter_id
-                ):
-                    workorder.production_id.write(
-                        {
-                            "overhead_cost_ids": [
-                                (1, overhead.id, {"actual_minute": workorder.duration})
-                            ]
-                        }
-                    )
-            self.production_id.write(
-                {
-                    "material_cost_ids": [
-                        (1, rec.id, {"actual_quantity": rec.planned_qty})
-                        for rec in self.production_id.material_cost_ids
-                    ]
-                }
-            )
+            'manufacture_process_costing.process_costing_method')
+        if process_value == 'work-center':
+            for rec in self.production_id.labour_cost_ids:
+                for val in self:
+                    if rec.operation == val.name:
+                        labour_id = rec.id
+                        self.production_id.write({
+                            'labour_cost_ids': [
+                                (1, labour_id, {
+                                    'actual_minute': rec.duration
+                                }) for rec in self]
+                        })
+            for rec in self.production_id.overhead_cost_ids:
+                for val in self:
+                    if rec.operation == val.name:
+                        overhead_id = rec.id
+                        self.production_id.write({
+                            'overhead_cost_ids': [
+                                (1, overhead_id, {
+                                    'actual_minute': rec.duration
+                                }) for rec in self]
+                        })
+            self.production_id.write({
+                'material_cost_ids': [
+                    (1, rec.id, {
+                        'actual_quantity': rec.planned_qty
+                    }) for rec in self.production_id.material_cost_ids]
+                })
         return res
 
     def _get_actual_labour_cost(self) -> float:

@@ -3,7 +3,7 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
 #    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
@@ -21,54 +21,45 @@
 #############################################################################
 from odoo import api, fields, models
 
-# from odoo.addons.base.models.decimal_precision import dp
-
 
 class DirectMaterialCost(models.Model):
     """This class creates a new model with the name direct.material.cost"""
+    _name = 'direct.material.cost'
+    _description = 'Direct Material Cost'
 
-    _name = "direct.material.cost"
-    _description = "Direct Material Cost"
+    material_cost_id = fields.Many2one('mrp.bom',
+                                       string='Material Cost',
+                                       help='Corresponding bill of materials')
+    product_id = fields.Many2one('product.product',
+                                 string='Product',
+                                 help='Product required for the work')
+    planned_qty = fields.Float(string='Planned Qty',
+                                 help='Planned minutes for the work',
+                               digits='Quantity')
+    uom_id = fields.Many2one('uom.uom', string='UoM',
+                             help="Unit of measure")
+    cost_unit = fields.Float(string='Cost/Unit',
+                             help='Cost per unit for the work')
+    total_cost = fields.Float(compute='_compute_total_cost', store=True,
+                              string='Total Cost', help='Total material cost')
+    production_material_id = fields.Many2one('mrp.production',
+                                             string='Production Material',
+                                             help='Corresponding manufacturing '
+                                                  'order')
+    actual_quantity = fields.Float(string='Actual Quantity',
+                                     help='Actual quantity taken for the work')
+    total_actual_cost = fields.Float(compute='_compute_total_actual_cost',
+                                     string='Total Actual Cost',
+                                     help='Total actual material cost')
 
-    material_cost_id = fields.Many2one(
-        "mrp.bom", string="Material Cost", help="Corresponding bill of materials"
-    )
-    product_id = fields.Many2one(
-        "product.product", string="Product", help="Product required for the work"
-    )
-    planned_qty = fields.Float(
-        string="Planned Qty", help="Planned minutes for the work", digits="Product Unit"
-    )
-    uom_id = fields.Many2one("uom.uom", string="UoM", help="Unit of measure")
-    cost_unit = fields.Float(string="Cost/Unit", help="Cost per unit for the work")
-    total_cost = fields.Float(
-        compute="_compute_total_cost",
-        store=True,
-        string="Total Cost",
-        help="Total material cost",
-    )
-    production_material_id = fields.Many2one(
-        "mrp.production",
-        string="Production Material",
-        help="Corresponding manufacturing " "order",
-    )
-    actual_quantity = fields.Integer(
-        string="Actual Quantity", help="Actual quantity taken for the work"
-    )
-    total_actual_cost = fields.Float(
-        compute="_compute_total_actual_cost",
-        string="Total Actual Cost",
-        help="Total actual material cost",
-    )
-
-    @api.depends("planned_qty", "cost_unit")
+    @api.depends('planned_qty', 'cost_unit')
     def _compute_total_cost(self):
-        """Calculate material total_cost based on planned_qty and cost_unit"""
+        """Calculate total_cost based on planned_qty and cost_unit"""
         for rec in self:
             rec.total_cost = rec.planned_qty * rec.cost_unit
 
-    @api.depends("actual_quantity", "cost_unit")
+    @api.depends('actual_quantity', 'cost_unit')
     def _compute_total_actual_cost(self):
-        """Calculate material total_actual_cost based on actual_quantity and cost_unit"""
+        """Calculate total_actual_cost based on actual_quantity and cost_unit"""
         for rec in self:
             rec.total_actual_cost = rec.actual_quantity * rec.cost_unit

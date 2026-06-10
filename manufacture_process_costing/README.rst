@@ -22,9 +22,10 @@ Company
 
 Credits
 -------
-* Developer: (V16) Javid A,
-            (V18) Busthana Shirin
-            Contact: odoo@cybrosys.com
+* Developer: (V16) Javid A , Contact: odoo@cybrosys.com,
+             (V18) Busthana Shirin , Contact: odoo@cybrosys.com,
+             (V19) Arshad Ali Pottengal , Contact: odoo@cybrosys.com,
+
 
 Contacts
 --------

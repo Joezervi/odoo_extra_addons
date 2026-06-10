@@ -3,7 +3,7 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
 #    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
@@ -19,60 +19,48 @@
 #    If not, see <http://www.gnu.org/licenses/>.
 #
 #############################################################################
-# pylint: disable=R0801
-
-# R0801: Similar lines in 2 files
-
 from odoo import api, fields, models
 
 
 class DirectOverheadCost(models.Model):
     """This class creates a new model with the name direct.overhead.cost"""
+    _name = 'direct.overhead.cost'
+    _description = 'Direct Overhead Cost'
 
-    _name = "direct.overhead.cost"
-    _description = "Direct Overhead Cost"
-
-    overhead_cost_id = fields.Many2one(
-        "mrp.bom", string="Overhead Cost", help="Corresponding bill of materials"
-    )
-    operation = fields.Char(string="Operation", help="Operation required for the work")
+    overhead_cost_id = fields.Many2one('mrp.bom',
+                                       string='Overhead Cost',
+                                       help='Corresponding bill of materials')
+    operation = fields.Char(string='Operation',
+                            help='Operation required for the work')
     workcenter_ids = fields.Many2many(
         "mrp.workcenter", string="Work Centers", compute="_compute_workcenter"
     )
-    work_center_id = fields.Many2one(
-        "mrp.workcenter", string="Work Center", help="Corresponding work center"
-    )
-    planned_minute = fields.Float(
-        string="Planned Minute", help="Planned minutes for the work"
-    )
-    cost_minute = fields.Float(
-        string="Cost/Minute", help="Cost per minute for the work"
-    )
-    total_cost = fields.Float(
-        compute="_compute_total_cost",
-        store=True,
-        string="Total Cost",
-        help="Total overhead cost",
-    )
-    production_overhead_id = fields.Many2one(
-        "mrp.production",
-        string="Production Overhead",
-        help="corresponding manufacturing " "order",
-    )
-    actual_minute = fields.Float(
-        string="Actual Minute", help="Actual minutes taken for the work"
-    )
-    total_actual_cost = fields.Float(
-        compute="_compute_total_actual_cost", help="Total Actual overhead cost"
-    )
+    work_center_id = fields.Many2one('mrp.workcenter',
+                                     string='Work Center',
+                                     help='Corresponding work center')
+    planned_minute = fields.Float(string='Planned Minute',
+                                  help='Planned minutes for the work')
+    cost_minute = fields.Float(string='Cost/Minute',
+                               help='Cost per minute for the work')
+    total_cost = fields.Float(compute='_compute_total_cost', store=True,
+                              string='Total Cost',
+                              help='Total overhead cost')
+    production_overhead_id = fields.Many2one('mrp.production',
+                                             string='Production Overhead',
+                                             help='corresponding manufacturing '
+                                                  'order')
+    actual_minute = fields.Float(string='Actual Minute',
+                                 help='Actual minutes taken for the work')
+    total_actual_cost = fields.Float(compute='_compute_total_actual_cost',
+                                     help='Total Actual overhead cost')
 
-    @api.depends("planned_minute", "cost_minute")
+    @api.depends('planned_minute', 'cost_minute')
     def _compute_total_cost(self):
         """Calculate total_cost based on planned_minute and cost_minute"""
         for rec in self:
             rec.total_cost = rec.planned_minute * rec.cost_minute
 
-    @api.depends("actual_minute", "cost_minute")
+    @api.depends('actual_minute', 'cost_minute')
     def _compute_total_actual_cost(self):
         """Calculate total_actual_cost based on actual_minute and cost_minute"""
         for rec in self:

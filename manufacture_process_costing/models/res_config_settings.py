@@ -3,7 +3,7 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
 #    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
@@ -21,19 +21,15 @@
 #############################################################################
 from odoo import fields, models
 
-from ..datamodels.datamodel import CostMethod
-
 
 class ResConfigSettings(models.TransientModel):
     """This class extends the 'res.config.settings' model to add a custom
     field for configuring the process costing method"""
+    _inherit = 'res.config.settings'
 
-    _inherit = "res.config.settings"
-
-    process_costing_method = fields.Selection(
-        selection=CostMethod.get_list(),
-        default=CostMethod.MANUAL.code,
-        string="Process Costing Method",
-        config_parameter="manufacture_process_costing.process_costing_method",
-        help="How to compute process costing, whether manually or work " "center based",
-    )
+    process_costing_method = fields.Selection(selection=[
+        ('manually', 'Manually'), ('work-center', 'Work Center')],
+        default='manually', string='Process Costing Method',
+        config_parameter='manufacture_process_costing.process_costing_method',
+        help='How to compute process costing, whether manually or work '
+             'center based')

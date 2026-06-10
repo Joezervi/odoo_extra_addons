@@ -3,7 +3,7 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
 #    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
@@ -25,12 +25,9 @@ from odoo import fields, models
 class MrpWorkcenter(models.Model):
     """This class inherits the already existing class mrp workcenter to add
     the total cost of overhead and labour per minute"""
+    _inherit = 'mrp.workcenter'
 
-    _inherit = "mrp.workcenter"
-
-    overhead_cost = fields.Float(
-        string="Overhead Costs per minute", help="Set an overhead cost cost per minute"
-    )
-    labour_cost = fields.Float(
-        string="Labour Costs per minute", help="Set an labour cost cost per minute"
-    )
+    overhead_cost = fields.Float(string='Overhead Costs per minute',
+                                 help='Set an overhead cost cost per minute')
+    labour_cost = fields.Float(string='Labour Costs per minute',
+                               help='Set an labour cost cost per minute')

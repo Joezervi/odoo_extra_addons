@@ -31,7 +31,7 @@
                                    force_save="1"/>
                         </list>
                     </field>
-                    <h2 class="oe_subtotal_footer oe_right" style="margin-left: 70%;">
+                    <h2 class="oe_subtotal_footer oe_right">
                         <group>
                             <field name="total_material_cost"/>
                         </group>
@@ -55,7 +55,7 @@
                                    force_save="1"/>
                         </list>
                     </field>
-                    <h2 class="oe_subtotal_footer oe_right" style="margin-left: 70%;">
+                    <h2 class="oe_subtotal_footer oe_right">
                         <group>
                             <field name="total_labour_cost"/>
                         </group>
@@ -79,7 +79,7 @@
                                    force_save="1"/>
                         </list>
                     </field>
-                    <h2 class="oe_subtotal_footer oe_right" style="margin-left: 70%;">
+                    <h2 class="oe_subtotal_footer oe_right">
                         <group>
                             <field name="total_overhead_cost"/>
                         </group>

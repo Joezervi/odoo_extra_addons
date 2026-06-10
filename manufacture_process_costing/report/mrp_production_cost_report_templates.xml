@@ -274,14 +274,14 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <h6 class="oe_subtotal_footer oe_right">Total Labour
+                        <h6 class="oe_subtotal_footer oe_right">Total Overhead
                             Cost :
                             <strong>
                                 <t t-esc="data['total_overhead_cost']"/>
                             </strong>
                         </h6>
                         <h6 class="oe_subtotal_footer oe_right">Total Actual
-                            Labour Cost :
+                            Overhead Cost :
                             <strong>
                                 <t t-esc="data['total_actual_overhead_cost']"/>
                             </strong>

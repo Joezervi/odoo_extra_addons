@@ -3,7 +3,7 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
 #    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
@@ -20,12 +20,12 @@
 #
 #############################################################################
 {
-    "name": "Process Cost of Manufacturing Orders",
-    "version": "19.0.1.0.0",
-    "category": "Manufacturing",
-    "summary": """Manufacture Process Costing By Material Cost, Labour Cost and
+    'name': 'Process Cost of Manufacturing Orders',
+    'version': '19.0.1.0.0',
+    'category': 'Manufacturing',
+    'summary': """Manufacture Process Costing By Material Cost, Labour Cost and
      Overhead Cost""",
-    "description": """This module helps to calculate process cost of 
+    'description': """This module helps to calculate process cost of 
      manufacturing order and workorder with material cost, labour cost and 
      overhead cost from components and work center. It calculates both 
      estimated costing and real costing. Estimated costing is done on Bill of 
@@ -34,28 +34,27 @@
      cancel reason for canceling the manufacture order.You can also see the 
      reports for BOM and Manufacture order. Also, you can add cancel 
      reasons.""",
-    "author": "Cybrosys Techno Solutions",
-    "company": "Cybrosys Techno Solutions",
-    "maintainer": "Cybrosys Techno Solutions",
-    "website": "https://cybrosys.com",
-    "depends": ["base", "mrp"],
-    "data": [
-        "security/ir.model.access.csv",
-        "data/material_data.xml",
-        "views/res_config_settings_views.xml",
-        "views/mrp_bom_views.xml",
-        "views/mrp_production_views.xml",
-        "views/mrp_workcenter_views.xml",
-        "views/mrp_workorder_views.xml",
-        "views/mrp_cancel_reason_views.xml",
-        "report/mrp_bom_cost_reports.xml",
-        "report/mrp_bom_cost_report_templates.xml",
-        "report/mrp_production_cost_reports.xml",
-        "report/mrp_production_cost_report_templates.xml",
+    'author': 'Cybrosys Techno Solutions',
+    'company': 'Cybrosys Techno Solutions',
+    'maintainer': 'Cybrosys Techno Solutions',
+    'website': 'https://www.cybrosys.com',
+    'depends': ['base', 'mrp'],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/material_data.xml',
+        'views/res_config_settings_views.xml',
+        'views/mrp_bom_views.xml',
+        'views/mrp_production_views.xml',
+        'views/mrp_workcenter_views.xml',
+        'views/mrp_cancel_reason_views.xml',
+        'report/mrp_bom_cost_reports.xml',
+        'report/mrp_bom_cost_report_templates.xml',
+        'report/mrp_production_cost_reports.xml',
+        'report/mrp_production_cost_report_templates.xml',
     ],
-    "images": ["static/description/banner.jpg"],
-    "license": "LGPL-3",
-    "installable": True,
-    "auto_install": False,
-    "application": False,
+    'images': ['static/description/banner.jpg'],
+    'license': 'LGPL-3',
+    'installable': True,
+    'auto_install': False,
+    'application': False,
 }
