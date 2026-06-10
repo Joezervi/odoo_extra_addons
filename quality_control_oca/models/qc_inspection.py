@@ -291,7 +291,7 @@ class QcInspectionLine(models.Model):
                     [x.name for x in insp_line.possible_ql_values if x.ok]
                 )
             else:
-                if self.env.ref("uom.group_uom") in self.env.user.groups_id:
+                if self.env.ref("uom.group_uom") in self.env.user.group_ids:
                     min_val = formatLang(self.env, insp_line.min_value)
                     max_val = formatLang(self.env, insp_line.max_value)
                     insp_line.valid_values = f"{min_val} ~ {max_val}"
