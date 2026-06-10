@@ -1,0 +1,17 @@
+<odoo>
+    <record id="view_mrp_production_form_shift" model="ir.ui.view">
+        <field name="name">mrp.production.form.shift</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='date_start']" position="after">
+                <label for="date_finished" string="Scheduled End" invisible="state in ['draft', 'cancel']"/>
+                <field name="date_finished" nolabel="1" readonly="1" invisible="state in ['draft', 'cancel']"/>
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="shift"/>
+                <field name="delay_days"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

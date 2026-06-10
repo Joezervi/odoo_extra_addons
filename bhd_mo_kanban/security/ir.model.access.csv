@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mrp_production_user_simple,mrp.production.user.simple,model_mrp_production,mrp.group_mrp_user,1,1,0,0
+access_mrp_production_manager,mrp.production.manager.simple,model_mrp_production,mrp.group_mrp_manager,1,1,1,1
+access_mrp_production_employee,mrp.production.employee,model_mrp_production,base.group_user,1,1,0,0
+access_mrp_production_stage_log_user,mrp.production.stage.log.user,model_mrp_production_stage_log,mrp.group_mrp_user,1,1,1,0
+access_mrp_production_stage_log_manager,mrp.production.stage.log.manager,model_mrp_production_stage_log,mrp.group_mrp_manager,1,1,1,1
+access_mrp_production_stage_log_employee,mrp.production.stage.log.employee,model_mrp_production_stage_log,base.group_user,1,0,0,0
+access_mo_dashboard_user,mo.dashboard.user,model_mo_dashboard,mrp.group_mrp_user,1,1,1,0
+access_mo_dashboard_manager,mo.dashboard.manager,model_mo_dashboard,mrp.group_mrp_manager,1,1,1,1
+access_mo_dashboard_employee,mo.dashboard.employee,model_mo_dashboard,base.group_user,1,1,1,0

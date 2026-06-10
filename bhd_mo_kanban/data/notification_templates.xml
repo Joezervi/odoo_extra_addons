@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record id="email_template_mo_complete" model="mail.template">
+        <field name="name">MO Completed - Customer Notification</field>
+        <field name="model_id" ref="mrp.model_mrp_production"/>
+        <field name="subject">Your Order is Ready - {{ object.name }}</field>
+        <field name="email_from">{{ object.company_id.email or 'info@bhd.om' }}</field>
+        <field name="body_html" type="html">
+            <p>Dear Customer,</p>
+            <p>Your manufacturing order <strong>{{ object.name }}</strong> has been completed.</p>
+            <p>Product: {{ object.product_id.name }}<br/>Quantity: {{ object.product_qty }}</p>
+            <p>Thank you for your business!<br/>BHD Printing &amp; Designing</p>
+        </field>
+    </record>
+</odoo>

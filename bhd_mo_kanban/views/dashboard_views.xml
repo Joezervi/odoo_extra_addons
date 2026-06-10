@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- DASHBOARD FORM VIEW -->
+    <record id="view_mo_dashboard_form" model="ir.ui.view">
+        <field name="name">mo.dashboard.form</field>
+        <field name="model">mo.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="MO Dashboard" create="0" edit="0" delete="0">
+                <sheet>
+                    <group string="Manufacturing Dashboard">
+                        <group string="Summary">
+                            <field name="today_completed"/>
+                            <field name="total_active"/>
+                            <field name="overdue_count"/>
+                            <field name="avg_completion_time"/>
+                        </group>
+                        <group string="Orders by Stage">
+                            <field name="count_design"/>
+                            <field name="count_printing"/>
+                            <field name="count_finishing"/>
+                            <field name="count_on_hold"/>
+                            <field name="count_packing"/>
+                            <field name="count_done"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_view_kanban" type="object"
+                                string="Open Kanban Board" class="btn-primary"/>
+                        <button name="action_view_overdue" type="object"
+                                string="View Overdue" class="btn-danger"/>
+                        <button name="action_view_stage_logs" type="object"
+                                string="Stage History" class="btn-secondary"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- DASHBOARD ACTION -->
+    <record id="action_mo_dashboard" model="ir.actions.act_window">
+        <field name="name">Production Dashboard</field>
+        <field name="res_model">mo.dashboard</field>
+        <field name="view_mode">form</field>
+        <field name="target">main</field>
+    </record>
+
+</odoo>

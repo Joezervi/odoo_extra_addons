@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Dashboard Menu -->
+    <menuitem id="menu_mo_dashboard"
+              name="📊 Production Dashboard"
+              parent="mrp.menu_mrp_manufacturing"
+              action="action_mo_dashboard"
+              sequence="1"/>
+
+    <!-- Kanban Board Menu -->
+    <menuitem id="menu_mrp_production_kanban"
+              name="📋 MO Kanban Board"
+              parent="mrp.menu_mrp_manufacturing"
+              action="action_mrp_production_kanban"
+              sequence="5"/>
+
+    <!-- Stage Logs Menu -->
+    <menuitem id="menu_mrp_stage_logs"
+              name="⏱️ Stage History"
+              parent="mrp.menu_mrp_manufacturing"
+              action="action_all_stage_logs"
+              sequence="20"/>
+</odoo>
