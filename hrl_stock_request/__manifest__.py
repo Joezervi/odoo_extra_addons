@@ -3,7 +3,7 @@
     "name": "Inter-Warehouse Stock Request",
     "author": "Herul Ramdani",
     "website": "https://www.lemacore.com",
-    "version": "1.0",
+    "version": "19.0.1.0.0",
     "category": "Inventory",
     "summary": "Seamlessly request and transfer stock between warehouses with automated two-step internal transfers via transit location",
     "description": """
