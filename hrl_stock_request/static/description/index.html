@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Inter-Warehouse Stock Request</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+</head>
+
+<body style="font-family: &quot;Montserrat&quot;, sans-serif;background-color: #2C0091;">
+    
+    <div style="padding: 40px 24px 32px; text-align: center;">
+        <h1 style="font-size: 2rem; font-weight: 800; color: #121212;
+                letter-spacing: -0.5px; margin-bottom: 12px; line-height: 1.2;">
+            Inter-Warehouse Stock Request
+        </h1>
+
+        <p style="color: #64728f; font-size: 0.95rem; line-height: 1.7; max-width: 480px; margin: 0 auto 28px;">
+            Effortlessly move stock between warehouses by submitting a single 
+            <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; color: #2C0091;">Stock Request</code>
+            — the system automatically generates both a 
+            <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; color: #2C0091;">Delivery</code>
+            and a 
+            <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; color: #2C0091;">Receipt</code>
+            via transit location. No manual transfers, no errors — just seamless 
+            inter-warehouse replenishment in a few clicks.
+        </p>
+
+        <div class="col-lg-12 d-flex justify-content-center align-items-center">
+            <a href="mailto:herulramdani.r16@gmail.com"
+                class="contact-btn whatsapp-btn d-flex align-items-center gap-2 justify-content-center"
+                style="position: relative;padding: 15px 25px;border: none;border-radius: 50px;font-size: 15px;font-weight: 600;text-decoration: none;color: white;cursor: pointer;justify-content: center;background-color: #c6231f;">
+                <img src="./assets/icons/mail.png" alt="" width="18" height="18">
+                <span class="btn-text" tyle="font-size: 15px;letter-spacing: 0.5px;">Email Us</span>
+            </a>
+            <a href="https://www.linkedin.com/in/herul-ramdani-ab600b121" target="_blank"
+                class="contact-btn whatsapp-btn d-flex align-items-center gap-2 justify-content-center"
+                style="position: relative;padding: 15px 25px;border: none;border-radius: 50px;font-size: 15px;font-weight: 600;text-decoration: none;color: white;cursor: pointer;justify-content: center;background-color: #0a66c2;">
+                <img src="./assets/icons/linkedin.png" alt="" width="18" height="18">
+                <span class="btn-text" style="font-size: 15px;letter-spacing: 0.5px;">LinkedIn</span>
+            </a>
+        </div>
+        
+    </div>
+
+    <div class="my-4 bg-white" style="border-radius: 6px; box-shadow: 0px 8px 20px -4px rgba(0, 0, 0, 0.10); border: 1px solid #FFFFFFFF;">
+        <div style="border-bottom: 2px solid #e9ecef; background: #fff; border-radius: 10px 10px 0 0;">
+            <ul class="nav nav-tabs justify-content-center bg-white py-2"
+                id="myTab" role="tablist"
+                style="border-radius: 6px 6px 0 0;">
+
+                <li class="nav-item">
+                    <a class="nav-link active"
+                    data-bs-toggle="tab"
+                    href="#overview"
+                    id="overview-tab"
+                    role="tab"
+                    aria-controls="overview"
+                    style="color: #2C0091; border-radius: 10px;">
+                        <i class="fa fa-image" style="font-size:13px; margin-right:6px;"></i>
+                        Screenshots
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                    data-bs-toggle="tab"
+                    href="#feature"
+                    id="feature-tab"
+                    role="tab"
+                    aria-controls="feature" 
+                    style="color: #2C0091; border-radius: 10px;">
+                        <i class="fa fa-star" style="font-size:13px; margin-right:6px;"></i>
+                        Features
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content p-md-5 p-2 py-3" id="myTabContent">
+            <div aria-labelledby="overview-tab" class="tab-pane fade show active" id="overview" role="tabpanel">
+                <div style="border-radius: 12px; background-color: #fafafa; padding: 40px 24px;">
+                    <h2 style="font-size: 1.8rem; font-weight: 700; color: #121212;
+                            text-align: center; margin-bottom: 8px;">
+                        Inter-Warehouse Stock Request
+                    </h2>
+                    <p style="text-align: center; color: #64728f; font-size: 0.95rem; margin-bottom: 32px;">
+                        Submit a single <strong>Stock Request</strong> and let the system do the rest — 
+                        automatically creating a <strong>Delivery</strong> from the source warehouse to transit, 
+                        and a <strong>Receipt</strong> from transit to the destination warehouse. 
+                        Full traceability, zero manual effort.
+                    </p>
+
+                    <div style="margin-bottom: 32px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                            <div style="background: #2C0091; color: #fff; border-radius: 50%; 
+                                        width: 28px; height: 28px; display: flex; align-items: center; 
+                                        justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">
+                                1
+                            </div>
+                            <h3 style="margin: 0; font-size: 1.05rem; font-weight: 600; color: #121212;">
+                                Create & Confirm Stock Request
+                            </h3>
+                        </div>
+                        <p style="color: #64728f; font-size: 0.9rem; line-height: 1.7; margin: 0 0 12px 38px;">
+                            Navigate to <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px; 
+                            font-size: 0.85em; color: #2C0091;">Operations &gt; Stock Request</code>, fill in the 
+                            source warehouse, destination location, and products — then hit 
+                            <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px; 
+                            font-size: 0.85em; color: #2C0091;">Confirm</code>.
+                        </p>
+                        <div style="background: #fff; border-radius: 12px; border: 1px solid #e9ecef;
+                                    box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden; margin-left: 38px;">
+                            <img alt="Create Stock Request"
+                                src="./assets/screenshots/image1.png"
+                                loading="lazy"
+                                style="width: 100%; height: auto; display: block; min-height: 1px;">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 8px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                            <div style="background: #2C0091; color: #fff; border-radius: 50%; 
+                                        width: 28px; height: 28px; display: flex; align-items: center; 
+                                        justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">
+                                2
+                            </div>
+                            <h3 style="margin: 0; font-size: 1.05rem; font-weight: 600; color: #121212;">
+                                Auto-Generated Two-Step Transfers via Transit
+                            </h3>
+                        </div>
+                        <p style="color: #64728f; font-size: 0.9rem; line-height: 1.7; margin: 0 0 12px 38px;">
+                            Upon confirmation, the system instantly generates two linked transfers — 
+                            a <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px; 
+                            font-size: 0.85em; color: #2C0091;">Delivery</code> 
+                            (Source → Virtual Locations/Transit) and a 
+                            <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px; 
+                            font-size: 0.85em; color: #2C0091;">Receipt</code> 
+                            (Transit → Destination), both traceable back to the original 
+                            <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px; 
+                            font-size: 0.85em; color: #2C0091;">SR/</code> reference number.
+                        </p>
+                        <div style="background: #fff; border-radius: 12px; border: 1px solid #e9ecef;
+                                    box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden; margin-left: 38px;">
+                            <img alt="Auto-generated Delivery and Receipt Transfers"
+                                src="./assets/screenshots/image2.png"
+                                loading="lazy"
+                                style="width: 100%; height: auto; display: block; min-height: 1px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="border-radius: 12px; background-color: #fafafa; padding: 40px 24px;">
+                    <h2 style="font-size: 1.8rem; font-weight: 700; color: #121212;
+                            text-align: center; margin-bottom: 8px;">
+                        Two-Step Transfer via Transit Location
+                    </h2>
+                    <p style="text-align: center; color: #64728f; font-size: 0.95rem; margin-bottom: 32px;">
+                        Every confirmed Stock Request automatically triggers two traceable internal transfers —
+                        stock moves through a <strong>Virtual Transit Location</strong> before reaching 
+                        the destination warehouse, ensuring clean inventory records at every stage.
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                <div style="background: #2C0091; color: #fff; border-radius: 50%;
+                                            width: 28px; height: 28px; display: flex; align-items: center;
+                                            justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">
+                                    1
+                                </div>
+                                <h3 style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #121212;">
+                                    Delivery — Source to Transit
+                                </h3>
+                            </div>
+                            <p style="color: #64728f; font-size: 0.85rem; line-height: 1.6; margin: 0 0 12px 38px;">
+                                Operation type 
+                                <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px;
+                                font-size: 0.85em; color: #2C0091;">YourCompany: Internal Transfers</code>
+                                moves stock from
+                                <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px;
+                                font-size: 0.85em; color: #2C0091;">WH/Stock</code>
+                                → 
+                                <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px;
+                                font-size: 0.85em; color: #2C0091;">Virtual Locations/Transit</code>.
+                            </p>
+                            <div style="background: #fff; border-radius: 12px; border: 1px solid #e9ecef;
+                                        box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden;">
+                                <img alt="Delivery Transfer: WH/Stock to Transit"
+                                    src="./assets/screenshots/image3.png"
+                                    loading="lazy"
+                                    style="width: 100%; height: auto; display: block; min-height: 1px;">
+                            </div>
+                        </div>
+
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                <div style="background: #2C0091; color: #fff; border-radius: 50%;
+                                            width: 28px; height: 28px; display: flex; align-items: center;
+                                            justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">
+                                    2
+                                </div>
+                                <h3 style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #121212;">
+                                    Receipt — Transit to Destination
+                                </h3>
+                            </div>
+                            <p style="color: #64728f; font-size: 0.85rem; line-height: 1.6; margin: 0 0 12px 38px;">
+                                Operation type 
+                                <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px;
+                                font-size: 0.85em; color: #2C0091;">New Warehouse: Internal Transfers</code>
+                                receives stock from
+                                <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px;
+                                font-size: 0.85em; color: #2C0091;">Virtual Locations/Transit</code>
+                                → 
+                                <code style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px;
+                                font-size: 0.85em; color: #2C0091;">NW/Stock</code>.
+                            </p>
+                            <div style="background: #fff; border-radius: 12px; border: 1px solid #e9ecef;
+                                        box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden;">
+                                <img alt="Receipt Transfer: Transit to NW/Stock"
+                                    src="./assets/screenshots/image4.png"
+                                    loading="lazy"
+                                    style="width: 100%; height: auto; display: block; min-height: 1px;">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div aria-labelledby="feature-tab" class="tab-pane fade show py-1" id="feature" role="tabpanel">
+                <div class="row py-4">
+
+                    <div class="col-md-6 col-sm-12 p-3">
+                        <div style="padding: 24px; border-radius: 12px; background-color: #fafafa; border: 1px solid #eee; height: 100%;">
+                            <div style="display: flex; align-items: flex-start; gap: 14px;">
+                                <div class="d-flex align-items-center justify-content-center" style="min-width: 28px; width: 28px; height: 28px; border-radius: 50%;
+                                    background-color: #2C0091; margin-right: 10px; flex-shrink: 0;
+                                    display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-check" style="color: #fff; font-size: 12px; line-height: 1; display: block;"></i>
+                                </div>
+                                <div>
+                                    <p style="color: #2C0091; font-weight: 700; font-size: 1rem; margin-bottom: 6px;">
+                                        One-Form Stock Request
+                                    </p>
+                                    <p style="color: #555; font-size: 0.9rem; line-height: 1.6; margin: 0;">
+                                        Submit a complete inter-warehouse transfer request from a single form — 
+                                        define source warehouse, destination location, products, and quantities 
+                                        all in one place. No multi-step setup required.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 p-3">
+                        <div style="padding: 24px; border-radius: 12px; background-color: #fafafa; border: 1px solid #eee; height: 100%;">
+                            <div style="display: flex; align-items: flex-start; gap: 14px;">
+                                <div class="d-flex align-items-center justify-content-center" style="min-width: 28px; width: 28px; height: 28px; border-radius: 50%;
+                                    background-color: #2C0091; margin-right: 10px; flex-shrink: 0;
+                                    display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-check" style="color: #fff; font-size: 12px; line-height: 1; display: block;"></i>
+                                </div>
+                                <div>
+                                    <p style="color: #2C0091; font-weight: 700; font-size: 1rem; margin-bottom: 6px;">
+                                        Auto Two-Step Transfer Generation
+                                    </p>
+                                    <p style="color: #555; font-size: 0.9rem; line-height: 1.6; margin: 0;">
+                                        On confirmation, the system automatically generates both a 
+                                        <code>Delivery</code> (Source → Transit) and a <code>Receipt</code> 
+                                        (Transit → Destination) — zero manual transfer creation, 
+                                        zero room for error.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 p-3">
+                        <div style="padding: 24px; border-radius: 12px; background-color: #fafafa; border: 1px solid #eee; height: 100%;">
+                            <div style="display: flex; align-items: flex-start; gap: 14px;">
+                                <div class="d-flex align-items-center justify-content-center" style="min-width: 28px; width: 28px; height: 28px; border-radius: 50%;
+                                    background-color: #2C0091; margin-right: 10px; flex-shrink: 0;
+                                    display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-check" style="color: #fff; font-size: 12px; line-height: 1; display: block;"></i>
+                                </div>
+                                <div>
+                                    <p style="color: #2C0091; font-weight: 700; font-size: 1rem; margin-bottom: 6px;">
+                                        Transit Location Routing
+                                    </p>
+                                    <p style="color: #555; font-size: 0.9rem; line-height: 1.6; margin: 0;">
+                                        Stock is routed through <code>Virtual Locations/Transit</code> between 
+                                        warehouses — keeping inventory records accurate and compliant 
+                                        at every movement stage, with no ghost stock in either location.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 p-3">
+                        <div style="padding: 24px; border-radius: 12px; background-color: #fafafa; border: 1px solid #eee; height: 100%;">
+                            <div style="display: flex; align-items: flex-start; gap: 14px;">
+                                <div class="d-flex align-items-center justify-content-center" style="min-width: 28px; width: 28px; height: 28px; border-radius: 50%;
+                                    background-color: #2C0091; margin-right: 10px; flex-shrink: 0;
+                                    display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-check" style="color: #fff; font-size: 12px; line-height: 1; display: block;"></i>
+                                </div>
+                                <div>
+                                    <p style="color: #2C0091; font-weight: 700; font-size: 1rem; margin-bottom: 6px;">
+                                        Smart Buttons for Instant Navigation
+                                    </p>
+                                    <p style="color: #555; font-size: 0.9rem; line-height: 1.6; margin: 0;">
+                                        <code>Delivery</code> and <code>Receipt</code> smart buttons appear 
+                                        directly on the Stock Request form — jump to any linked transfer 
+                                        in one click and monitor progress without leaving the record.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 p-3">
+                        <div style="padding: 24px; border-radius: 12px; background-color: #fafafa; border: 1px solid #eee; height: 100%;">
+                            <div style="display: flex; align-items: flex-start; gap: 14px;">
+                                <div class="d-flex align-items-center justify-content-center" style="min-width: 28px; width: 28px; height: 28px; border-radius: 50%;
+                                    background-color: #2C0091; margin-right: 10px; flex-shrink: 0;
+                                    display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-check" style="color: #fff; font-size: 12px; line-height: 1; display: block;"></i>
+                                </div>
+                                <div>
+                                    <p style="color: #2C0091; font-weight: 700; font-size: 1rem; margin-bottom: 6px;">
+                                        Full Traceability via Source Document
+                                    </p>
+                                    <p style="color: #555; font-size: 0.9rem; line-height: 1.6; margin: 0;">
+                                        Every auto-generated transfer carries the originating 
+                                        <code>SR/</code> reference as its Source Document — 
+                                        giving your team and auditors a clear, end-to-end 
+                                        trail from request to final receipt.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 p-3">
+                        <div style="padding: 24px; border-radius: 12px; background-color: #fafafa; border: 1px solid #eee; height: 100%;">
+                            <div style="display: flex; align-items: flex-start; gap: 14px;">
+                                <div class="d-flex align-items-center justify-content-center" style="min-width: 28px; width: 28px; height: 28px; border-radius: 50%;
+                                    background-color: #2C0091; margin-right: 10px; flex-shrink: 0;
+                                    display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa fa-check" style="color: #fff; font-size: 12px; line-height: 1; display: block;"></i>
+                                </div>
+                                <div>
+                                    <p style="color: #2C0091; font-weight: 700; font-size: 1rem; margin-bottom: 6px;">
+                                        Draft → Confirm → Validate Workflow
+                                    </p>
+                                    <p style="color: #555; font-size: 0.9rem; line-height: 1.6; margin: 0;">
+                                        A clean three-stage approval workflow keeps every request 
+                                        controlled and auditable — from initial 
+                                        <code>Draft</code> submission through <code>Confirm</code> 
+                                        all the way to final <code>Validate</code>, 
+                                        with full status visibility at every step.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
