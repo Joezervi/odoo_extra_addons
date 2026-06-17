@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_sale_deposit_user,sale.deposit.user,model_sale_deposit_request,sale_deposit_request.group_deposit_user,1,1,1,0
-access_sale_deposit_line_user,sale.deposit.line.user,model_sale_deposit_request_line,sale_deposit_request.group_deposit_user,1,1,1,0
-access_sale_deposit_sales_manager,sale.deposit.sales.manager,model_sale_deposit_request,sale_deposit_request.group_deposit_sales_manager,1,1,1,1
-access_sale_deposit_finance_manager,sale.deposit.finance.manager,model_sale_deposit_request,sale_deposit_request.group_deposit_finance_manager,1,1,1,1

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<odoo>
-    <menuitem id="menu_sale_deposit_root" name="Sales Deposits" parent="sales_team.menu_sale_root" sequence="50"/>
-    <menuitem id="menu_sale_deposit_request" name="Deposit Requests" parent="menu_sale_deposit_root" action="action_sale_deposit_request"/>
-
-</odoo>

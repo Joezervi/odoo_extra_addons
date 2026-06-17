@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<odoo noupdate="1">
-    <record model="ir.config_parameter" id="uom_conversion_allow_zero_cost">
-        <field name="key">deltatech_uom_conversion.allow_zero_cost</field>
-        <field name="value">0</field>
-    </record>
-
-</odoo>

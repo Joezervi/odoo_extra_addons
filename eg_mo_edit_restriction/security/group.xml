@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
-    <record model="res.groups" id="manufacture_order_edit_restriction">
-        <field name="name">Manufacture Order Edit Restriction</field>
-    </record>
-</odoo>

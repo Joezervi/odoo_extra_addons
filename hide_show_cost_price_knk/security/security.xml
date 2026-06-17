@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <record id="group_hide_show_cost_knk" model="res.groups">
-        <field name="name">Hide/Show Cost Price</field>
-    </record>
-</odoo>

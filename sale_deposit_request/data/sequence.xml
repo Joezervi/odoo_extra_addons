@@ -1,8 +1,0 @@
-<odoo>
-    <record id="seq_sale_deposit_request" model="ir.sequence">
-        <field name="name">Sales Deposit Request</field>
-        <field name="code">sale.deposit.request</field>
-        <field name="prefix">SDR/%(year)s/</field>
-        <field name="padding">5</field>
-    </record>
-</odoo>

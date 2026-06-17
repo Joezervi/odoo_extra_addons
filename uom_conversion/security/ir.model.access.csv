@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_uom_conversion,access_uom_conversion,model_uom_conversion,base.group_user,1,1,1,0
-access_uom_conversion_line_in,access_uom_conversion_line_in,model_uom_conversion_line_in,base.group_user,1,1,1,1
-access_uom_conversion_line_out,access_uom_conversion_line_out,model_uom_conversion_line_out,base.group_user,1,1,1,1
