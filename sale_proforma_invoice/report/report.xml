@@ -10,8 +10,7 @@
             <div class="header">
                 <div class="row">
                     <div class="col-9" name="company_address">
-                        <h1 t-if="o.state in ['sale']">PROFORMA INVOICE</h1>
-                        <h1 t-else="">QUOTATION</h1>
+                        <h1>PROFORMA INVOICE</h1>
                         <ul class="list-unstyled">
                             <li>
                                 <h6 style="margin:auto;font-size:20px" t-field="o.company_id.partner_id.name"/>
@@ -47,9 +46,7 @@
             <div class="article">
                 <div class="pt-3">
                     <h2 class="mt-4">
-                        <span t-if="env.context.get('proforma', False) or is_pro_forma">Pro-Forma Invoice #</span>
-                        <span t-elif="o.state in ['draft','sent']">Quotation #</span>
-                        <span t-else="">Order #</span>
+                        <span t-else="">Pro-Forma Invoice #</span>
                         <span t-field="o.name"></span>
                     </h2>
                     <table class="table table-bordered border border-dark">
@@ -66,25 +63,22 @@
                                         <strong>Proforma Invoice Date:</strong>
                                         <span class="m-0" t-field="o.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"></span>
                                     </div>
-                                    <div t-if="o.pricelist_id " class="col-auto col-10 mw-100 mb-2">
+                                    <div class="col-auto col-10 mw-100 mb-2">
                                         <strong>Foreign Currency: </strong>
                                         <span class="m-0" t-field="o.pricelist_id.currency_id">THB</span>
                                     </div>
-
-                                    <div t-if="o.commitment_date" class="col-auto col-10 mw-100 mb-2">
-                                        <strong>Shipping Date: </strong>
+                                    <div class="col-auto col-10 mw-100 mb-2">
+                                        <strong>Shipment Date: </strong>
                                         <span class="m-0" t-field="o.commitment_date"></span>
                                     </div>
-
-                                    <div t-if="o.incoterm" class="col-auto col-10 mw-100 mb-2">
+                                    <div class="col-auto col-10 mw-100 mb-2">
                                         <strong>Incoterm: </strong>
                                         <span class="m-0" t-field="o.incoterm"></span>
                                     </div>
-                                    <div t-if="o.client_order_ref" class="col-auto col-10 mw-100 mb-2">
+                                    <div class="col-auto col-10 mw-100 mb-2">
                                         <strong>Customer PO No.: </strong>
                                         <span class="m-0" t-field="o.client_order_ref"></span>
                                     </div>
-
                                     <div t-if="o.user_id.name" class="col-auto col-10 mw-100 mb-2">
                                         <strong>Salesperson: </strong>
                                         <span class="m-0" t-field="o.user_id"></span>
@@ -266,6 +260,83 @@
             </xpath>
         </template>
     </data>
+
+    <template id="report_saleorder_proforma_invoice_inherit" inherit_id="sale_proforma_invoice.report_sale_proforma_invoice">
+        <xpath expr="//div[@class='clearfix']" position="after">
+            <div>
+                <!-- Title -->
+                <h4 style="margin-bottom:6px;">Banking Information</h4>
+                <!-- Table -->
+                <table style="width:75%; border-collapse: collapse; font-size:16px; table-layout: fixed;">
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold; width:28%;">
+                           Bank
+                        </td>
+                        <td style="border:1px solid #999; padding:4px; width:45%;">
+                            <t t-esc="docs.company_id.bank_branch_name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold; width:28%;">
+                           Branch
+                        </td>
+                        <td style="border:1px solid #999; padding:4px; width:45%;">
+                            <t t-esc="docs.company_id.bank_branch_name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold; width:28%;">
+                           Bank Address
+                        </td>
+                        <td style="border:1px solid #999; padding:4px; width:45%;">
+                            <t t-esc="docs.company_id.bank_branch_name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold;">
+                            SWIFT / BIC
+                        </td>
+                        <td style="border:1px solid #999; padding:4px;">
+                            <t t-esc="docs.company_id.bank_swift_code"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold; width:28%;">
+                            Account Name
+                        </td>
+                        <td style="border:1px solid #999; padding:4px; width:45%;">
+                            <t t-esc="docs.company_id.bank_account_number"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold; width:28%;">
+                            Account Number
+                        </td>
+                        <td style="border:1px solid #999; padding:4px; width:45%;">
+                            <t t-esc="docs.company_id.bank_account_number"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold;">
+                            Account Type
+                        </td>
+                        <td style="border:1px solid #999; padding:4px;">
+                            <t t-esc="docs.company_id.bank_account_type"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold;">
+                            IBAN
+                        </td>
+                        <td style="border:1px solid #999; padding:4px;">
+                            <t t-esc="docs.company_id.bank_iban"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </xpath>
+
+    </template>
 
     <record id="action_sale_order_custom" model="ir.actions.report">
         <field name="name">Proforma Invoice</field>
