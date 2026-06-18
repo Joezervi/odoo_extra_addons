@@ -9,6 +9,7 @@
             <field name="arch" type="xml">
                 <!-- Move the down payment field inside the sale_shipping group -->
                 <xpath expr="//group[@name='sale_shipping']" position="inside">
+                    <field name="bank_account"/>
                     <field name="down_payment"/>
                 </xpath>
             </field>

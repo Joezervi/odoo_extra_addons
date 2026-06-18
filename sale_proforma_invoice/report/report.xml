@@ -273,7 +273,7 @@
                            Bank
                         </td>
                         <td style="border:1px solid #999; padding:4px; width:45%;">
-                            <!-- <t t-esc="docs.company_id.bank_branch_name"/> -->
+                            <t t-esc="docs.bank_account.bank_id"/>
                         </td>
                     </tr>
                     <tr>
@@ -281,7 +281,7 @@
                            Branch
                         </td>
                         <td style="border:1px solid #999; padding:4px; width:45%;">
-                            <!-- <t t-esc="docs.company_id.bank_branch_name"/> -->
+                            <t t-esc="docs.bank_account.bank_id"/>
                         </td>
                     </tr>
                     <tr>
@@ -289,7 +289,7 @@
                            Bank Address
                         </td>
                         <td style="border:1px solid #999; padding:4px; width:45%;">
-                            <!-- <t t-esc="docs.company_id.bank_branch_name"/> -->
+                            <t t-esc="docs.bank_account.bank_id.street"/>
                         </td>
                     </tr>
                     <tr>
@@ -297,7 +297,7 @@
                             SWIFT / BIC
                         </td>
                         <td style="border:1px solid #999; padding:4px;">
-                            <!-- <t t-esc="docs.company_id.bank_swift_code"/> -->
+                            <t t-esc="docs.bann_account.bank_id.bic"/>
                         </td>
                     </tr>
                     <tr>
@@ -305,31 +305,15 @@
                             Account Name
                         </td>
                         <td style="border:1px solid #999; padding:4px; width:45%;">
-                            <!-- <t t-esc="docs.company_id.bank_account_number"/> -->
+                            <t t-esc="docs.bank_account.acc_holder_name"/>
                         </td>
                     </tr>
                     <tr>
-                        <td style="border:1px solid #999; padding:4px; font-weight:bold; width:28%;">
+                        <td style="padding:4px; font-weight:bold; width:28%;">
                             Account Number
                         </td>
                         <td style="border:1px solid #999; padding:4px; width:45%;">
-                            <!-- <t t-esc="docs.company_id.bank_account_number"/> -->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border:1px solid #999; padding:4px; font-weight:bold;">
-                            Account Type
-                        </td>
-                        <td style="border:1px solid #999; padding:4px;">
-                            <!-- <t t-esc="docs.company_id.bank_account_type"/> -->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border:1px solid #999; padding:4px; font-weight:bold;">
-                            IBAN
-                        </td>
-                        <td style="border:1px solid #999; padding:4px;">
-                            <!-- <t t-esc="docs.company_id.bank_iban"/> -->
+                            <t t-esc="docs.bank_account.acc_number"/>
                         </td>
                     </tr>
                 </table>
