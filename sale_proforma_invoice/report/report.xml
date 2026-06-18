@@ -297,7 +297,7 @@
                             SWIFT / BIC
                         </td>
                         <td style="border:1px solid #999; padding:4px;">
-                            <t t-esc="docs.bann_account.bank_id.bic"/>
+                            <t t-esc="docs.bank_account.bank_id.bic"/>
                         </td>
                     </tr>
                     <tr>
