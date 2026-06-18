@@ -9,7 +9,6 @@ class SaleOrder(models.Model):
     down_payment = fields.Monetary(
         string="Down Payment For Profoma Invoice", currency_field="currency_id"
     )
-    bank_account = fields.Char(string="Bank Account Details")
 
     def write(self, vals):
         if "down_payment" in vals:
