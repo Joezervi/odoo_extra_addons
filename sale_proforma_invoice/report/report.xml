@@ -46,7 +46,7 @@
             <div class="article">
                 <div class="pt-3">
                     <h2 class="mt-4">
-                        <span t-else="">Pro-Forma Invoice #</span>
+                        <span>Pro-Forma Invoice #</span>
                         <span t-field="o.name"></span>
                     </h2>
                     <table class="table table-bordered border border-dark">
