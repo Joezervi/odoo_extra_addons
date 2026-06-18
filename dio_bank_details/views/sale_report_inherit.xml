@@ -1,0 +1,65 @@
+<odoo>
+    <template id="report_saleorder_inherit" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@class='page']" position="after">
+            <br/>
+            <br/>
+
+            <div>
+                <!-- Title -->
+                <h4 style="margin-bottom:6px;">Banking Information</h4>
+
+                <!-- Table -->
+                <table style="width:75%; border-collapse: collapse; font-size:16px; table-layout: fixed;">
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold; width:28%;">
+                           Branch
+                        </td>
+                        <td style="border:1px solid #999; padding:4px; width:45%;">
+                            <t t-esc="doc.company_id.bank_branch_name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold; width:28%;">
+                            Account Number
+                        </td>
+                        <td style="border:1px solid #999; padding:4px; width:45%;">
+                            <t t-esc="doc.company_id.bank_account_number"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold;">
+                            Account Type
+                        </td>
+                        <td style="border:1px solid #999; padding:4px;">
+                            <t t-esc="doc.company_id.bank_account_type"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold;">
+                            SWIFT / BIC
+                        </td>
+                        <td style="border:1px solid #999; padding:4px;">
+                            <t t-esc="doc.company_id.bank_swift_code"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border:1px solid #999; padding:4px; font-weight:bold;">
+                            IBAN
+                        </td>
+                        <td style="border:1px solid #999; padding:4px;">
+                            <t t-esc="doc.company_id.bank_iban"/>
+                        </td>
+                    </tr>
+
+                </table>
+
+
+            </div>
+        </xpath>
+
+    </template>
+</odoo>
+

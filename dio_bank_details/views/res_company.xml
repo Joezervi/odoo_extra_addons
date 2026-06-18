@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_company_form_inherit_bank_tab" model="ir.ui.view">
+    <field name="name">res.company.form.bank.details</field>
+    <field name="model">res.company</field>
+    <field name="inherit_id" ref="base.view_company_form"/>
+    <field name="arch" type="xml">
+
+        <xpath expr="//notebook" position="inside">
+
+            <page string="Bank Details">
+
+                <group col="2">
+                    <field name="bank_branch_name"/>
+
+                    <field name="bank_account_type"/>
+                </group>
+
+                <group col="2">
+                    <field name="bank_account_number" password="True"/>
+                    <field name="bank_iban"/>
+
+                </group>
+
+                <group col="2">
+                     <field name="bank_swift_code"/>
+<!--                    <field name="bank_ifsc_code"/>-->
+                </group>
+
+            </page>
+
+        </xpath>
+
+    </field>
+</record>
+
+</odoo>
