@@ -7,7 +7,7 @@
     "license": "LGPL-3",
     "depends": ["sale"],
     "data": [
-        "views/res_compny.xml",
+        # "views/res_compny.xml",
         "views/sale_order_views.xml",
         "report/report.xml",
     ],
