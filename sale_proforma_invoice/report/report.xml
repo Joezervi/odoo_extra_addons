@@ -274,69 +274,71 @@
                         outline: none !important;
                     }
                 </style>
-                <table class="no-border-table" width="60%" style="font-size:14px;">
-                    <tr>
-                        <td style="padding:4px; width:15%;">
-                           Bank :
-                        </td>
-                        <td style="padding:4px; width:45%;">
-                            <t t-esc="docs.bank_account.bank_id.name"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:4px; width:15%;">
-                           Branch :
-                        </td>
-                        <td style="padding:4px; width:45%;">
-                            <t t-esc="docs.bank_account.bank_id.name"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:4px; width:15%;">
-                           Bank Address :
-                        </td>
-                        <td style="padding:4px; width:45%;">
-                            <span t-field="docs.bank_account.bank_id.street"/>
-                            <span t-field="docs.bank_account.bank_id.street2"/>
-                            <span t-field="docs.bank_account.bank_id.city"/>
-                            <span t-field="docs.bank_account.bank_id.state.name"/>
-                            <span t-field="docs.bank_account.bank_id.zip"/>
-                            <span t-field="docs.bank_account.bank_id.country.name"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:4px;">
-                            SWIFT / BIC :
-                        </td>
-                        <td style="padding:4px;">
-                            <t t-esc="docs.bank_account.bank_id.bic"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:4px; width:15%;">
-                            Account Name :
-                        </td>
-                        <td style="padding:4px; width:45%;">
-                            <t t-esc="docs.bank_account.acc_holder_name"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:4px; width:15%;">
-                            Account Number :
-                        </td>
-                        <td style="padding:4px; width:45%;">
-                            <t t-esc="docs.bank_account.acc_number"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:4px; width:15%;">
-                            Account Currency :
-                        </td>
-                        <td style="padding:4px; width:45%;">
-                            <t t-esc="docs.bank_account.currency_id.name"/>
-                        </td>
-                    </tr>
-                </table>
+                <t t-if="docs.bank_account">
+                    <table class="no-border-table" width="60%" style="font-size:14px;">
+                        <tr>
+                            <td style="padding:4px; width:15%;">
+                            Bank :
+                            </td>
+                            <td style="padding:4px; width:45%;">
+                                <t t-esc="docs.bank_account.bank_id.name"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:4px; width:15%;">
+                            Branch :
+                            </td>
+                            <td style="padding:4px; width:45%;">
+                                <t t-esc="docs.bank_account.aba_bsb"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:4px; width:15%;">
+                            Bank Address :
+                            </td>
+                            <td style="padding:4px; width:45%;">
+                                <span t-field="docs.bank_account.bank_id.street"/>
+                                <span t-field="docs.bank_account.bank_id.street2"/>
+                                <span t-field="docs.bank_account.bank_id.city"/>
+                                <span t-field="docs.bank_account.bank_id.state.name"/>
+                                <span t-field="docs.bank_account.bank_id.zip"/>
+                                <span t-field="docs.bank_account.bank_id.country.name"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:4px;">
+                                SWIFT / BIC :
+                            </td>
+                            <td style="padding:4px;">
+                                <t t-esc="docs.bank_account.bank_id.bic"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:4px; width:15%;">
+                                Account Name :
+                            </td>
+                            <td style="padding:4px; width:45%;">
+                                <t t-esc="docs.bank_account.acc_holder_name"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:4px; width:15%;">
+                                Account Number :
+                            </td>
+                            <td style="padding:4px; width:45%;">
+                                <t t-esc="docs.bank_account.acc_number"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:4px; width:15%;">
+                                Account Currency :
+                            </td>
+                            <td style="padding:4px; width:45%;">
+                                <t t-esc="docs.bank_account.currency_id.name"/>
+                            </td>
+                        </tr>
+                    </table>
+                </t>
             </div>
         </xpath>
 
